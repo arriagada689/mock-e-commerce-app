@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mock-e-commerce-app/static/css/main.f45dcbe3.css",
+    "main.js": "/mock-e-commerce-app/static/js/main.88976c06.js",
+    "index.html": "/mock-e-commerce-app/index.html",
+    "main.f45dcbe3.css.map": "/mock-e-commerce-app/static/css/main.f45dcbe3.css.map",
+    "main.88976c06.js.map": "/mock-e-commerce-app/static/js/main.88976c06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f45dcbe3.css",
+    "static/js/main.88976c06.js"
+  ]
+}
