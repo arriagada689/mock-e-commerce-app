@@ -1,0 +1,105 @@
+.grocery-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+}
+
+.back-button {
+    margin-bottom: 25px;
+    width: auto;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+    border-radius: 5px;
+    color: white;
+    background-color: blue;
+}
+
+.grocery-card-container img {
+    width: 500px;
+    height: 500px;
+}
+
+.right-side-container {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-left: 40px;
+}
+
+.product-rating-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.product-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-category {
+    color: #2c3e50;
+    font-size: 22px;
+}
+
+.product-name {
+    font-size: 28px;
+}
+
+.product-rating{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.product-quantity {
+    margin-bottom: 20px;
+}
+
+.product-description {
+    margin-bottom: 20px;
+}
+
+.product-button {
+    width: 80%;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+    border-radius: 5px;
+    color: white;
+}
+
+.product-button:hover {
+    background-color: #a8a3a3;
+}
+
+.bg-color {
+    background-color: blue;
+}
+
+.light-bg-color {
+    background-color: lightblue;
+}
+
+.mr {
+    margin-right: 10px;
+}

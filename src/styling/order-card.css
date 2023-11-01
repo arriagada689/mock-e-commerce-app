@@ -1,0 +1,13 @@
+.order-card-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.order-card-label {
+   margin-right: 100px; 
+}  
+
+.order-card-label:last-child {
+    margin-right: 0; 
+ }

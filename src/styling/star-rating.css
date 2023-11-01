@@ -1,0 +1,24 @@
+.star-rating {
+    margin-right: 10px;
+}
+.star-rating i,
+.half-star {
+    /* Define size for icons and their container */
+    width: 20px;  /* Adjust as necessary */
+    height: 20px;
+    font-size: 20px;  /* Adjust this to resize the actual icon */
+    vertical-align: top;
+}
+
+.half-star {
+    position: relative;
+    display: inline-block;
+}
+
+.half-star .overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
