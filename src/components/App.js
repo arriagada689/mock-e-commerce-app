@@ -7,11 +7,12 @@ import Register from "./Register";
 import Profile from "./Profile";
 import Cart from "./Cart";
 import ProductCard from "./ProductCard";
+import LoadingEllipses from './LoadingEllipses';
 
 function App() {
   const [display, setDisplay] = useState('Home');
   const [fakeCounter, setFakeCounter] = useState(0);
-  const [cartNumber, setCartNumber] = useState(0);
+  const [cartNumber, setCartNumber] = useState(null);
   const [error, setError] = useState(false);
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [showFavoritePopup, setShowFavoritePopup] = useState(false);
@@ -52,6 +53,9 @@ function App() {
                 setCartNumber(num);
             }, 1000);
         })
+        .catch((error) => {
+          setCartNumber(null);
+        })
     } else{
         fetch(`https://tattered-common-pineapple.glitch.me/cart?userid=${user.id}`)
         .then(response => response.json())
@@ -63,6 +67,9 @@ function App() {
             setTimeout(function() {
                 setCartNumber(num);
             }, 1000);
+        })
+        .catch((error) => {
+          setCartNumber(null);
         })
     }
 
@@ -204,7 +211,8 @@ function App() {
       {showFavoritePopup ? <div className="popup">Item added to favorites!</div> : null}
       {showRemoveFavoritePopup ? <div className="popup">Item removed from favorites!</div> : null}
       {showQuantityError ? <div className="popup">Quantity limit exceeded for this item.</div> : null}
-      {display === 'Home' ? <Home handleDisplay={handleDisplay} handleProductClick={handleProductClick} handleCartClick={handleCartClick} handleFavoriteClick={handleFavoriteClick} setFakeCounter={setFakeCounter} tempUserId={tempUserId} userId={user.id} loggedIn={loggedIn} setShowRemoveFavoritePopup={setShowRemoveFavoritePopup}/> : ''}
+      {cartNumber === null && <div className="centered-container"><div className="loading place-next">Loading<LoadingEllipses /></div></div>}
+      {display === 'Home' && cartNumber !== null ? <Home handleDisplay={handleDisplay} handleProductClick={handleProductClick} handleCartClick={handleCartClick} handleFavoriteClick={handleFavoriteClick} setFakeCounter={setFakeCounter} tempUserId={tempUserId} userId={user.id} loggedIn={loggedIn} setShowRemoveFavoritePopup={setShowRemoveFavoritePopup}/> : ''}
       {display === 'Signin' ? <Signin handleLogin={handleLogin} /> : ''}
       {display === 'Register' ? <Register handleLogin={handleLogin} /> : ''}
       {display === 'Profile' ? <Profile userId={user.id} setLoggedIn={setLoggedIn} setUser={setUser} signOut={signOut} setSignOut={setSignOut} handleDisplay={handleDisplay} error={error} /> : ''}
